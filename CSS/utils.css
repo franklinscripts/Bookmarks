@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+:root{
+    --font-face:"Poppins",sans-serif;
+    --soft-blue: hsl(231, 69%, 60%);
+    --soft-red: hsl(0, 94%, 66%);
+    --grayish-blue: hsl(229, 8%, 60%);
+    --very-dark-blue: hsl(229, 31%, 21%);
+    --font-size:18px;
+    --font-weight-4:400;
+    --font-weight-5:500;
+    --z-index:999;
+    --zz-index:-999;
+    --gen-width:100%;
+    --text-width:400px;
+    --medium-text-width:350px;
+    --pd-l:.9em;
+    --pd-t:5em;
+    --pd-b:1em;
+    --pd-r:.9em;
+}
+a{
+    text-decoration: none;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+ul li{
+    list-style-type: none;
+}
+html{
+    font-family: 'Rubik', sans-serif;
+
+}
+img{
+    width: 100%;
+}
+p{
+    width: var(--medium-text-width);
+    padding-top: var(--pd-b);
+    color: var(--grayish-blue);
+    font-size: 12px;
+}
+h1{
+    width: var(--medium-text-width);
+    color: var(--very-dark-blue);
+    
+
+}
+h2,h3{
+    color:var(--very-dark-blue);
+}
+.pd-l{
+    padding-left: var(--pd-l);
+}
+.pd-t{
+    padding-top: var(--pd-t);
+}
+.pd-r{
+    padding-right: var(--pd-r);
+}
+.pd-b{
+    padding-bottom: var(--pd-b);
+}
+.flex{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  
+}
+button,.button{
+    padding: 10px 19px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.ham{
+    width: 25px;
+}
+.blue-bg{
+    background-color: var(--soft-blue);
+    position: absolute;
+    right: 0;
+    width: 300px;
+    height: 200px;
+    z-index: var(--zz-index);
+    margin-top: 5em;
+    border-top-left-radius: 5pc;
+    border-bottom-left-radius: 5pc;
+}
+.button{
+    background-color: var(--soft-red);
+}
+.show{
+    display: flex;
+}
+
+  .tc{
+      text-align: center;
+  }
+  .cont{
+      display: flex;
+      align-items: center;
+     
+  }
+  h5{
+      color: #3d3c3c;
+  }
+  i{
+    margin-left: 2em;
+    color: var(--soft-blue);
+
+  }
+.mg{
+    margin: 0 auto;
+}
+.div-one,
+.div-two,
+.div-three,
+.div-four{
+    padding: 1em;
+    margin: 0 auto;
+}
+h6{
+    font-weight:200;
+    font-size: 14px;
+}
+.freq-cont {
+    margin: 0 auto;
+    
+}
+.stay{
+    background-color: var(--soft-blue);
+    color: rgba(245, 245, 245, 0.911);
+}
+.st-container{}
