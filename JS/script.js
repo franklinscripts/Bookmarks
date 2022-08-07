@@ -1,6 +1,13 @@
+
+window.addEventListener('scroll',reveal)
+
+//The navigation menu button
 const menuBtn = document.getElementById('menu-btn')
+//The navigation exit button 
 const closeBtn = document.getElementById('exit-btn')
+//The whole nav
 const nav = document.querySelector('.nav__menu-two ul')
+//The mobile nav menu
 const navT = document.querySelector('.nav__menu-two')
 const fit1 = document.querySelector('.fit1')
 const fit2 = document.querySelector('.fit2')
@@ -9,6 +16,10 @@ const container = document.getElementById('fit')
 const simpBtn = document.getElementById('feature-select-one')
 const spepBtn = document.getElementById('feature-select-two')
 const easBtn = document.getElementById('feature-select-three')
+const input = document.querySelector('input')
+const contactBtn = document.getElementById('contact')
+// This is an array of the features section holding the elements like containers💌
+
    const arr = [
       `
    <div class="feature-img">
@@ -63,15 +74,20 @@ const easBtn = document.getElementById('feature-select-three')
       </div>
 `]
 
+//Adding event listeners for the menu button click
 menuBtn.addEventListener('click',() =>{
+   //Makes it display block
    nav.style.display = "block"
    navT.style.display = "block"
 })
+//Adding event listeners for the menu button click
 closeBtn.addEventListener('click',() =>{
-
+   //Hides the navbar from the mobile device
    nav.style.display = "none"
    navT.style.display = "none"
 })
+
+//This Part litens to the HTML document and provide them with basic information in the array which is === containers for me
 simpBtn.addEventListener('click',() =>{
    container.innerHTML = arr[0]
    simpBtn.classList.add('acting')
@@ -92,50 +108,58 @@ easBtn.addEventListener('click',() =>{
 })
 
 
-let tl = gsap.timeline({
-   // yes, we can add it to an entire timeline!
-   scrollTrigger: {
-     trigger: ".features",
-     pin: true,  
-     start: "top top", 
-     end: "+=500", 
-     scrub: 1, 
-     snap: {
-       snapTo: "labels", 
-       duration: {min: 0.2, max: 3},
-       delay: 0.2,
-       ease: "power1.inOut" 
-     }
+//Checks if the email address is valid or not
+let regEx = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
+
+function getEmail(){
+   const success = document.querySelector('.suc')
+   const error = document.querySelector('.vl')
+   let val = input.value;
+   if(val.includes('@') && val.includes(".") && val.includes('gmail')){
+      error.style.display = "none"
+      success.style.display = "block"
+      input.value = ''
+     
+   }else{
+      success.style.display = "none"
+      error.style.display = "block"
+      input.value = ''
    }
- });
-//  gsap.from(".nav-bar", {duration: 3, y: 300, opacity: 0, scale: 0.5});
-// add animations and labels to the timeline
-tl.addLabel("start")
- .from(".hero-first", {scale: 0.3, rotation:45, autoAlpha: 0})
- .addLabel("color")
- .from(".hero-second", {duration: 2, ease: "bounce"})
- .addLabel("spin")
- .to("", {rotation: 360})
- .addLabel("end");
 
-gsap.to('.hero-section',{
-   scrollTrigger:".hero-section",
-   x: 500
-
-});
-gsap.from(".features", {duration: 2, x: 200, ease: "bounce"})
-gsap.from(".feature-header", 1, {
-    
-    x: 50,
-    
-    repeat: -1, 
-    ease: "power1.inOut",
-    delay:.5,
-   
-  });
-  //set timer to 3 seconds, after that, load the magic animation and repeat forever
-function myFunction() {
-    const selector = document.querySelector('.features')
-    selector.classList.add('magictime', 'puffIn')
 }
-setInterval(myFunction, 1000);
+/*Scroll Reaveal*/
+let sectionId;
+const sections = document.querySelectorAll('section[id]');
+window.addEventListener('scroll',scrollActive);
+function scrollActive() {
+    const scrollY = window.pageYOffset
+    sections.forEach(current => {
+        const sectionHeight = current.offsetHeight 
+        const sectionTop = current.offsetTop - 40;
+        sectionId = current.getAttribute('id');
+    });
+}
+//scroll reveal animation
+const sr = ScrollReveal({
+    origin:'top',
+    distance:'60px',
+    duration:2000,
+    reset:true
+});
+
+function reveal(){
+   const reveals = document.querySelectorAll('.reveal');
+   for (let i = 0; i < reveals.length; i++) {
+      const elementHeight = window.innerHeight;
+      const elementTop = reveals[i].getBoundingClientRect().top;
+      const elementVisible = 100;
+      if(elementTop < elementHeight - elementVisible){
+      reveals[i].classList.add("active");
+      
+      }else {
+         reveals[i].classList.remove("active")
+      }
+}
+}
+
+
