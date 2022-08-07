@@ -24,6 +24,9 @@
     --pd-b:1em;
     --pd-r:.9em;
 }
+button:focus{
+    outline: none;
+}
 a{
     text-decoration: none;
     font-size: 12px;
@@ -45,7 +48,7 @@ p{
     width: var(--medium-text-width);
     padding-top: var(--pd-b);
     color: var(--grayish-blue);
-    font-size: 12px;
+    font-size: 15px;
 }
 h1{
     width: var(--medium-text-width);

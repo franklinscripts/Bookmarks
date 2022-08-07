@@ -1,0 +1,63 @@
+@import url("./utils.css");
+footer{
+    background-color: var(--very-dark-blue);
+}
+ul {
+    display: flex;
+    
+}
+.footer-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1em 3em;
+
+}
+
+ul li{
+    padding: .3em;
+}
+.footer-links a{
+    color: gray;
+    font-size: 15px;
+    text-transform: capitalize;
+}
+.attribution{
+    text-align: center;
+}
+.fqa_button{
+    text-align: center;
+    outline: none;
+    border:none;
+    margin-top: 2em;
+    background-color: var(--soft-blue);
+    color: #f5f5f5;
+}
+@media screen and (max-width:760px) {
+    .footer-container{
+        display: block;
+         margin: 0 auto;
+    }
+    .footer-links{
+        display: block;
+        margin: 0 auto;
+        padding: 0;
+    }
+    ul.footer-links{
+        display: block;
+    }
+    footer{
+        text-align: left;
+        padding-top: 3em;
+    }
+    .img-mobile{
+        margin: 0 auto;
+    }
+    footer img{
+        display: block;
+        margin-left: 5em;
+        text-align: center;
+        padding: 1em;
+        
+    }
+}

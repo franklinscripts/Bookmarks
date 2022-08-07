@@ -92,18 +92,18 @@ nav ul {
     cursor: pointer;
     margin: 0 auto;
 }
+
 .acting{
     border-bottom:2px solid red;
     max-width: 60px;
     width: 60px;
     padding-top: 1em;  
 }
+
 .feature-img img{
     width: 300px;
 }
-.feature-info{
-    
-}
+
 .feature-info h4{
     margin-top: 4em;
     font-weight: 500;
@@ -113,6 +113,7 @@ nav ul {
     padding-top: 1em;
     padding-bottom: 1em;
 }
+
 .feature-info button{
     border: none;
     background-color: var(--soft-blue);
@@ -232,7 +233,16 @@ nav ul {
   margin-left: 4em;
     padding-top: 1em;  
 } */
-
+.icons img{
+    width:20px;
+    margin: 1em;
+}
+.icons{
+    bottom: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+}
 
 @media   (max-width:768px) and (max-width:1024px) {
     body{
@@ -274,7 +284,7 @@ nav ul {
         transition: 1s ease-in;
         backdrop-filter: blur(10px);
         height: 100vh;
-        position: absolute;
+        position: fixed;
         z-index: var(--z-index);
         
    } 
