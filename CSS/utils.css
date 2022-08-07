@@ -266,7 +266,7 @@ details[open] summary::after{
 summary img{
     width: 15px;
 }
-.reveal{
+/* .reveal{
     position:initial;
     transform:translateY(150px);
     opacity: 0;
@@ -275,7 +275,7 @@ summary img{
 .reveal.active{
     transform: translateY(0px);
     opacity: 1;
-}
+} */
 @media (max-width:760px) {
     body{
         overflow-x: hidden;
